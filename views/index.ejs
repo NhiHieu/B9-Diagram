@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+  <form action="/index" method="POST">
+    <div class="container">
+      <h1>So do lop B9 ( 02/2014) </h1>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Ten nguoi choi" required>
+      <br>
+      <% for( let i = 0; i < 4; i++ ) { %>
+      <h1>To <%=i+1 %></h1>
+      <% for( let j = 0; j < 6; j++ ) { %>
+      <div class="row">
+        <% for( let k = 0; k < 2 ; k++ ) { %>
+        <% if (! ((i === 0 || i === 3) && j === 5 && k === 0)) { %>
+        <div class="col">
+          <div class="form-group md-form">
+            <input type="text" class="form-control" name="position_<%= i*12 + j*2 +k %>" id="<%= i*12 + j*2 +k %>">
+          </div>
+        </div>
+        <% } %>
+        <% } %>
+      </div>
+      <% } %>
+      <% } %>
+      <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+    </div>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const students = ['Minh Nhu',
+      'Viet Dat',
+      'Ngoc Linh',
+      'Le Quang',
+      'Huu Lap',
+      'Bao Khanh',
+      'Le Tien',
+      'Ai Tram',
+      'Nhi Hieu',
+      'Thanh Nga',
+      'Phuc Quang',
+      'Ngoc Hung',
+      'Phan Tien',
+      'Tran Long',
+      'Minh Trang',
+      'Quang Vinh',
+      'Gia Phuc',
+      'Uyen Nhi',
+      'Kim Oanh',
+      'Phuoc Loc',
+      'Nguyen Quang',
+      'Thanh Quang',
+      'Huong Ly',
+      'Hong Chau',
+      'Quoc Anh',
+      'Xuan An',
+      'Minh Tam',
+      'Danh Long',
+      'Anh Chuong',
+      'Thanh Phap',
+      'Thanh Nhi',
+      'Minh Quy',
+      'Quynh Huong',
+      'Kieu My',
+      'Dinh Thong',
+      'Ngoc Thanh',
+      'Lien Huong',
+      'Tuyet Anh',
+      'Khanh Minh',
+      'Thanh Nhan',
+      'Kim Ngan',
+      'Nguyen Cuc',
+      'Huy Hoang',
+      'Khanh Ha',
+      'Dinh Vu',
+      'Ngoc Quy']
+    for (let i = 0; i < 50; i++) {
+      $("#" + i).autocomplete({
+        source: students
+      });
+    }
+  </script>
+</body>
+
+
+
+</html>
