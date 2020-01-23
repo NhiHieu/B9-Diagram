@@ -15,12 +15,24 @@
       <h1>So do lop B9 ( 02/2014) </h1>
       <input type="text" class="form-control" id="name" name="name" placeholder="Ten nguoi choi" required>
       <br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="class" id="exampleRadios1" value="11" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Nam lop 11 (02/2014)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="class" id="exampleRadios2" value="12" checked>
+        <label class="form-check-label" for="exampleRadios2">
+          Cuoi nam 12
+        </label>
+      </div>
       <% for( let i = 0; i < 4; i++ ) { %>
       <h1>To <%=i+1 %></h1>
       <% for( let j = 0; j < 6; j++ ) { %>
       <div class="row">
         <% for( let k = 0; k < 2 ; k++ ) { %>
-        <% if (! ((i === 0 || i === 3) && j === 5 && k === 0)) { %>
+        <% if (! ((i === 0) && j === 5 && k === 0)) { %>
         <div class="col">
           <div class="form-group md-form">
             <input type="text" class="form-control" name="position_<%= i*12 + j*2 +k %>" id="<%= i*12 + j*2 +k %>">
@@ -85,7 +97,8 @@
       'Huy Hoang',
       'Khanh Ha',
       'Dinh Vu',
-      'Ngoc Quy']
+      'Ngoc Quy',
+      'Hoang Long']
     for (let i = 0; i < 50; i++) {
       $("#" + i).autocomplete({
         source: students
